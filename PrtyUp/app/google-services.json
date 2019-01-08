@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1093667873213",
+    "firebase_url": "https://prtyup-8a891.firebaseio.com",
+    "project_id": "prtyup-8a891",
+    "storage_bucket": "prtyup-8a891.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093667873213:android:f8c42330402b2bc7",
+        "android_client_info": {
+          "package_name": "com.sengbh.prtyup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093667873213-g5pfl4to5lbdmt7qbh7r6sstdg7n1r93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sengbh.prtyup",
+            "certificate_hash": "a9418d6384e2390918e2ec21a226ff7d4af304f7"
+          }
+        },
+        {
+          "client_id": "1093667873213-9ro0bons8h6qrb4du9mmavjp4lp5qiej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPDl8kQwA2BH6X88xV3bjOPKojN_iG4Ts"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093667873213-4t7a5mefmc4arcrccc77nku8ocr900n7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
