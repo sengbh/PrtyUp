@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent" android:id="@+id/linearLayout">
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:inputType="textEmailAddress"
+            android:text="Email"
+            android:ems="10"
+            tools:layout_editor_absoluteY="46dp"
+            android:id="@+id/email_login_edittext" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:inputType="textPassword"
+            android:text="Password"
+            android:ems="10"
+            tools:layout_editor_absoluteY="120dp"
+            android:id="@+id/password_login_editText" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="@string/log_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button"
+            tools:layout_editor_absoluteY="236dp" app:layout_constraintEnd_toEndOf="@+id/password_login_editText"
+            app:layout_constraintStart_toStartOf="@+id/password_login_editText"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
