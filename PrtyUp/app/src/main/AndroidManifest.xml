@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".LogInActivity"></activity>
         <activity android:name=".CreateAccountActivity"/>
+        <activity android:name=".GoogleActivity"/>
     </application>
 
 </manifest>

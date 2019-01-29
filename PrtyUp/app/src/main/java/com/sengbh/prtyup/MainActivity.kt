@@ -20,9 +20,6 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        val gmail = google_btm.setOnClickListener {
-
-        }
         val facebook = facebook_btm.setOnClickListener {
 
         }
@@ -34,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         create_account_btm.setOnClickListener {
             //call createAccount function
            createAccount()
+        }
+
+        google_btm.setOnClickListener{
+            //call google acccount function
+            googleAccount()
         }
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -52,15 +54,25 @@ class MainActivity : AppCompatActivity() {
 //        }
     }
     private fun logIn(){
-        Log.d("MainActivity", "show log in screen")
+        Log.d(MESSAGE, "show log in screen")
         val intent = Intent(this, LogInActivity::class.java)
         startActivity(intent)
     }
 
     private fun createAccount(){
-        Log.d("MainActivity", "show create an account screen")
+        Log.d(MESSAGE, "show create an account screen")
         val intent = Intent(this, CreateAccountActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun googleAccount(){
+        Log.d(MESSAGE, "show google account screen")
+        val intent = Intent(this, GoogleActivity::class.java)
+        startActivity(intent)
+
+    }
+    companion object {
+        private const val MESSAGE = "MainActivity"
     }
 
 }
