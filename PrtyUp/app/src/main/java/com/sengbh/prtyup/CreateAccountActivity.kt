@@ -14,33 +14,37 @@ class CreateAccountActivity: AppCompatActivity(){
         setContentView(R.layout.activity_create_account)
 
         register_btm.setOnClickListener{
-            val useremail = useremail_editText.text.toString()
-            val userpassword = userpassword_editText.text.toString()
+            parseCreateAccountActivity()
+        }
 
-            if (useremail.isEmpty() || userpassword.isEmpty()){
-                Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
+    }
+    private fun parseCreateAccountActivity(){
+        val useremail = useremail_editText.text.toString()
+        val userpassword = userpassword_editText.text.toString()
 
-            Log.d("CreateAccountActivity", "Email is: $useremail")
-            Log.d("CreateAccountActivity", "Password is: $userpassword")
+        if (useremail.isEmpty() || userpassword.isEmpty()){
+            Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
+            return
+        }
 
-            //Firebase auth
-            fun createAccount(useremail: String, userpassword: String, callback: (FirebaseUser?) -> Unit){
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(useremail, userpassword)
-                    .addOnCompleteListener{ task ->
-                        if(task.isSuccessful){
-                            Log.d("CreateAccountActivity", "Create an account is successful")
-                            val user = FirebaseAuth.getInstance().currentUser
-                            callback.invoke(user)
+        Log.d("CreateAccountActivity", "Email is: " + useremail)
+        Log.d("CreateAccountActivity", "Password is: $userpassword")
 
-                        }else{
-                            Log.d("CreateAccountActivity", "Create an account fail", task.exception)
-                            callback.invoke(null)
-                        }
+        //Firebase auth
+        fun createAccount(useremail: String, userpassword: String, callback: (FirebaseUser?) -> Unit){
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(useremail, userpassword)
+                .addOnCompleteListener{ task ->
+                    if(task.isSuccessful){
+                        Log.d("CreateAccountActivity", "Create an account is successful")
+                        val user = FirebaseAuth.getInstance().currentUser
+                        callback.invoke(user)
+
+                    }else{
+                        Log.d("CreateAccountActivity", "Create an account fail", task.exception)
+                        Toast.makeText(this, "Failed to create an account", Toast.LENGTH_SHORT).show()
+                        callback.invoke(null)
                     }
-            }
-
+                }
         }
     }
 

@@ -43,8 +43,8 @@
     <Button
             android:text="@string/sign_up"
             android:background="@drawable/rounded_buttom_createaccount_activity_main"
-            android:layout_width="243dp"
-            android:layout_height="50dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/register_btm" app:layout_constraintEnd_toEndOf="@+id/userpassword_editText"
             app:layout_constraintStart_toStartOf="@+id/userpassword_editText"
             android:layout_marginTop="60dp" app:layout_constraintTop_toBottomOf="@+id/userpassword_editText"/>
