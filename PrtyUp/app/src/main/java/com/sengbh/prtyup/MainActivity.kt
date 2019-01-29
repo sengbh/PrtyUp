@@ -20,22 +20,21 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        val facebook = facebook_btm.setOnClickListener {
-
+        google_btm.setOnClickListener{
+            //call google acccount function
+            googleAccount()
         }
-        logIn_btm.setOnClickListener {
-            //call logIn() function
+        facebook_btm.setOnClickListener{
+            //call facebook function
+            facebookAccount()
+        }
+        have_an_account_textView.setOnClickListener{
             logIn()
         }
 
         create_account_btm.setOnClickListener {
             //call createAccount function
            createAccount()
-        }
-
-        google_btm.setOnClickListener{
-            //call google acccount function
-            googleAccount()
         }
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -70,6 +69,12 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, GoogleActivity::class.java)
         startActivity(intent)
 
+    }
+
+    private fun facebookAccount(){
+        Log.d(MESSAGE, "show facebook screen")
+        val intent = Intent(this, FacebookActivity::class.java)
+        startActivity(intent)
     }
     companion object {
         private const val MESSAGE = "MainActivity"

@@ -35,7 +35,7 @@ class LogInActivity: AppCompatActivity() {
         Log.d("Login", "Log in with email and password: $email/$password")
     }
 
-    fun loggingIn(email: String, password: String, callback: (FirebaseUser?) -> Unit) {
+    fun loggIngIn(email: String, password: String, callback: (FirebaseUser?) -> Unit) {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {

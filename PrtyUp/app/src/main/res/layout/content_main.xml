@@ -66,31 +66,18 @@
 
         <TextView
                 android:id="@+id/have_an_account_textView"
-                android:layout_width="121dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="8dp"
+                android:layout_width="243dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="532dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="@string/have_an_account"
+                android:textSize="15dp"
+                android:text="Have an account? Log In"
                 android:textAlignment="center"
                 android:gravity="center_vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.278"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.248"/>
-        <Button
-                android:id="@+id/logIn_btm"
-                android:layout_width="122dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="8dp"
-                android:text="@string/log_in"
-                android:background="@drawable/rounded_buttom_createaccount_activity_main"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="@+id/have_an_account_textView"
-                app:layout_constraintStart_toEndOf="@+id/have_an_account_textView"
-                app:layout_constraintTop_toTopOf="@+id/have_an_account_textView"/>
+                app:layout_constraintVertical_bias="0.248"
+                app:layout_constraintEnd_toEndOf="@+id/create_account_btm"
+                app:layout_constraintStart_toStartOf="@+id/create_account_btm"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
