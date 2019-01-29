@@ -35,17 +35,20 @@ class CreateAccountActivity: AppCompatActivity(){
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(useremail, userpassword)
                 .addOnCompleteListener{ task ->
                     if(task.isSuccessful){
-                        Log.d("CreateAccountActivity", "Create an account is successful")
+                        Log.d(MESSAGE, "Create an account is successful")
                         val user = FirebaseAuth.getInstance().currentUser
                         callback.invoke(user)
 
                     }else{
-                        Log.d("CreateAccountActivity", "Create an account fail", task.exception)
+                        Log.d(MESSAGE, "Create an account fail", task.exception)
                         Toast.makeText(this, "Failed to create an account", Toast.LENGTH_SHORT).show()
                         callback.invoke(null)
                     }
                 }
         }
+    }
+    companion object {
+        private const val MESSAGE = "CreateAccountActivity"
     }
 
 }

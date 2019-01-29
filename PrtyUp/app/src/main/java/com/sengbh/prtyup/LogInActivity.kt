@@ -39,15 +39,18 @@ class LogInActivity: AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d("LogInAccountActivity", "Log in successfully")
+                    Log.d(MESSAGE, "Log in successfully")
                     val user = FirebaseAuth.getInstance().currentUser
                     callback.invoke(user)
                 } else {
-                    Log.d("LogInAccountActivity", "Log in unsuccessfully", task.exception)
+                    Log.d(MESSAGE, "Log in unsuccessfully", task.exception)
                     Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
                     callback.invoke(null)
                 }
             }
+    }
+    companion object {
+        private const val MESSAGE = "LogInActivity"
     }
 
 }
