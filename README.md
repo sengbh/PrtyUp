@@ -1,3 +1,3 @@
 ## Partyapp
 
-Testing a social app with Kotlin
+A social app with kotlin and FirebaseAuth
