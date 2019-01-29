@@ -32,10 +32,18 @@
             android:text="@string/log_in"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/button"
+            android:id="@+id/log_in_btm"
             android:background="@drawable/rounded_buttom_createaccount_activity_main"
             app:layout_constraintEnd_toEndOf="@+id/password_login_editText"
             app:layout_constraintStart_toStartOf="@+id/password_login_editText"
-            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="72dp"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="52dp"
             app:layout_constraintTop_toBottomOf="@+id/password_login_editText"/>
+    <TextView
+            android:text="back to main screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back_to_main_screen_textView" app:layout_constraintEnd_toEndOf="@+id/log_in_btm"
+            app:layout_constraintStart_toStartOf="@+id/log_in_btm" android:layout_marginTop="36dp"
+            app:layout_constraintTop_toBottomOf="@+id/log_in_btm" app:layout_constraintHorizontal_bias="0.496"
+            android:textAlignment="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

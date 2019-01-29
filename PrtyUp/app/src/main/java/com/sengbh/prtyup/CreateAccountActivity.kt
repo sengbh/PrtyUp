@@ -2,6 +2,7 @@ package com.sengbh.prtyup
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -12,21 +13,35 @@ class CreateAccountActivity: AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
-        val username = username_editText.toString()
-        val email = useremail_editText.toString()
-        val password = userpassword_editText.toString()
+        register_btm.setOnClickListener{
+            val useremail = useremail_editText.text.toString()
+            val userpassword = userpassword_editText.text.toString()
 
-        Log.d("CreateAccountActivity", "Email is" + email)
-        Log.d("CreateAccountActivity", "Password: $password")
-
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener{ task ->
-                if(task.isSuccessful)
-                    Log.d("CreateAccountActivity", "CreateUserWithEmail: Success")
-                    val username = FirebaseAuth.getInstance().currentUser
-                    return@addOnCompleteListener
+            if (useremail.isEmpty() || userpassword.isEmpty()){
+                Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
 
+            Log.d("CreateAccountActivity", "Email is: $useremail")
+            Log.d("CreateAccountActivity", "Password is: $userpassword")
+
+            //Firebase auth
+            fun createAccount(useremail: String, userpassword: String, callback: (FirebaseUser?) -> Unit){
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(useremail, userpassword)
+                    .addOnCompleteListener{ task ->
+                        if(task.isSuccessful){
+                            Log.d("CreateAccountActivity", "Create an account is successful")
+                            val user = FirebaseAuth.getInstance().currentUser
+                            callback.invoke(user)
+
+                        }else{
+                            Log.d("CreateAccountActivity", "Create an account fail", task.exception)
+                            callback.invoke(null)
+                        }
+                    }
+            }
+
+        }
     }
 
 }

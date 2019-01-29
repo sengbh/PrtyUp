@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -22,11 +20,6 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-       /*signupButton1.setOnClickListener{
-           emailPassword.signUp(emailAddress.text.toString(), passWord.text.toString()){
-
-           }
-       }*/
         val gmail = google_btm.setOnClickListener {
 
         }
@@ -37,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "show log in screen")
             val intent = Intent(this, LogInActivity::class.java)
             startActivity(intent)
+
         }
 
         create_account_btm.setOnClickListener {
