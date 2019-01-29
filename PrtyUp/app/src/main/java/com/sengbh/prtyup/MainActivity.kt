@@ -27,16 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         }
         logIn_btm.setOnClickListener {
-            Log.d("MainActivity", "show log in screen")
-            val intent = Intent(this, LogInActivity::class.java)
-            startActivity(intent)
-
+            //call logIn() function
+            logIn()
         }
 
         create_account_btm.setOnClickListener {
-            Log.d("MainActivity", "show create an account screen")
-            val intent = Intent(this, CreateAccountActivity::class.java)
-            startActivity(intent)
+            //call createAccount function
+           createAccount()
         }
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -53,6 +50,17 @@ class MainActivity : AppCompatActivity() {
 //            R.id.action_settings -> true
 //            else -> super.onOptionsItemSelected(item)
 //        }
+    }
+    private fun logIn(){
+        Log.d("MainActivity", "show log in screen")
+        val intent = Intent(this, LogInActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun createAccount(){
+        Log.d("MainActivity", "show create an account screen")
+        val intent = Intent(this, CreateAccountActivity::class.java)
+        startActivity(intent)
     }
 
 }

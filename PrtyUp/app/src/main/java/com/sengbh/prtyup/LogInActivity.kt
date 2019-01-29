@@ -44,6 +44,7 @@ class LogInActivity: AppCompatActivity() {
                     callback.invoke(user)
                 } else {
                     Log.d("LogInAccountActivity", "Log in unsuccessfully", task.exception)
+                    Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
                     callback.invoke(null)
                 }
             }

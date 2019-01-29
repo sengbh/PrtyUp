@@ -27,7 +27,7 @@ class CreateAccountActivity: AppCompatActivity(){
             return
         }
 
-        Log.d("CreateAccountActivity", "Email is: " + useremail)
+        Log.d("CreateAccountActivity", "Email is: $useremail")
         Log.d("CreateAccountActivity", "Password is: $userpassword")
 
         //Firebase auth
