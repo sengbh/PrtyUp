@@ -100,29 +100,28 @@ class CreateAccountActivity: AppCompatActivity(){
                 Log.d(MESSAGE, "Successfully upload an image: ${it.metadata?.path}")
 
                 ref.downloadUrl.addOnSuccessListener {
-                    it.toString()
                     Log.d(MESSAGE, "File location: ${it}")
 
-                    saveUserToDatabase()
+                    saveUserToDatabase(it.toString())
                 }
             }
     }
 
-    private fun saveUserToDatabase(){
+    private fun saveUserToDatabase(profileImageUrl: String){
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference(("/users/$uid"))
 
-        val user = User(uid, username_editText.text.toString(), )
+        val user = User(uid, username_editText.text.toString(), profileImageUrl)
         ref.setValue(user)
             .addOnSuccessListener {
                 Log.d(MESSAGE, "save image:")
             }
     }
 
-    class User(val  uid: String, val userName: String, val profileImageUrl: String)
-
     companion object {
         private const val MESSAGE = "CreateAccountActivity"
     }
 
 }
+
+class User(val uid: String, val userName: String, val profileImageUrl: String)
