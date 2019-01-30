@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login_screen.*
-import org.w3c.dom.Text
+
 
 class LogInActivity: AppCompatActivity() {
     private var mProgressBar: ProgressBar? = null

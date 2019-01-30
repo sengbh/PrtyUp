@@ -21,6 +21,8 @@ import java.util.*
 class CreateAccountActivity: AppCompatActivity(){
     private var selectPhotoUri: Uri? = null
     private var username: String? = null
+    private var useremail: String? = null
+    private var userpassword: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
@@ -34,10 +36,11 @@ class CreateAccountActivity: AppCompatActivity(){
     }
 
     private fun parseCreateAccountActivity(){
+
         //val username = username_editText.text.toString()
         this.username = username_editText?.text.toString()
-        val useremail = useremail_editText.text.toString()
-        val userpassword = userpassword_editText.text.toString()
+        this.useremail = useremail_editText.text.toString()
+        this.userpassword= userpassword_editText.text.toString()
 
         if (TextUtils.isEmpty(useremail) || TextUtils.isEmpty(userpassword) || TextUtils.isEmpty(username)){
             Toast.makeText(this, "Enter username, email and password", Toast.LENGTH_SHORT).show()
