@@ -26,6 +26,7 @@
         <activity android:name=".CreateAccountActivity"/>
         <activity android:name=".GoogleActivity"/>
         <activity android:name=".FacebookActivity"/>
+        <activity android:name=".ResetPasswordActivity"/>
     </application>
 
 </manifest>

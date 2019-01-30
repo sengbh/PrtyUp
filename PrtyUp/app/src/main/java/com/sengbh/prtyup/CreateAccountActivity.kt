@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
-import android.net.UrlQuerySanitizer
 import android.os.Bundle
 import android.provider.MediaStore
 import android.text.TextUtils

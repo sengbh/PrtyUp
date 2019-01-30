@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_login_screen.*
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -36,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             //call createAccount function
            createAccount()
         }
+
+        forgot_password_textView.setOnClickListener {
+            forgotPassword()
+        }
+
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        // Inflate the menu; this adds items to the action bar if it is present.
@@ -74,6 +80,12 @@ class MainActivity : AppCompatActivity() {
     private fun facebookAccount(){
         Log.d(MESSAGE, "show facebook screen")
         val intent = Intent(this, FacebookActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun forgotPassword(){
+        Log.d(MESSAGE, "show reset password screen")
+        val intent = Intent(this, ResetPasswordActivity::class.java)
         startActivity(intent)
     }
     companion object {

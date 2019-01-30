@@ -1,5 +1,6 @@
 package com.sengbh.prtyup
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.activity_login_screen.*
 
 
@@ -23,9 +25,6 @@ class LogInActivity: AppCompatActivity() {
             parseLogInActivity()
         }
 
-        forgot_password_textView.setOnClickListener {
-
-        }
     }
 
     private fun initialize(){
