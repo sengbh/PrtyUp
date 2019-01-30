@@ -1,33 +1,42 @@
 package com.sengbh.prtyup
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_login_screen.*
+import org.w3c.dom.Text
 
 class LogInActivity: AppCompatActivity() {
-
+    private var mProgressBar: ProgressBar? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_screen)
+
+        initialize()
 
         log_in_btm.setOnClickListener {
             parseLogInActivity()
         }
 
-        back_to_main_screen_textView.setOnClickListener {
-            finish()
+        forgot_password_textView.setOnClickListener {
+
         }
+    }
+
+    private fun initialize(){
+        mProgressBar = ProgressBar(this)
     }
 
     private fun parseLogInActivity() {
         val email = email_login_edittext.text.toString()
         val password = password_login_editText.text.toString()
 
-        if (email.isEmpty() || password.isEmpty()) {
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Enter email and password", Toast.LENGTH_SHORT).show()
             return
         }
@@ -35,10 +44,11 @@ class LogInActivity: AppCompatActivity() {
         Log.d("Login", "Log in with email and password: $email/$password")
     }
 
-    fun loggIngIn(email: String, password: String, callback: (FirebaseUser?) -> Unit) {
+    fun signIn(email: String, password: String, callback: (FirebaseUser?) -> Unit) {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
+                    //mProgressBar!!.setMessage("Login user..")
                     Log.d(MESSAGE, "Log in successfully")
                     val user = FirebaseAuth.getInstance().currentUser
                     callback.invoke(user)

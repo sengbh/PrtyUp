@@ -66,8 +66,8 @@
 
         <TextView
                 android:id="@+id/have_an_account_textView"
-                android:layout_width="243dp"
-                android:layout_height="50dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="532dp"
                 android:layout_marginBottom="8dp"
                 android:textSize="15dp"
