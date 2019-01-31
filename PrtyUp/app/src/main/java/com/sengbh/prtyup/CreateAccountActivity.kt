@@ -87,8 +87,11 @@ class CreateAccountActivity: AppCompatActivity(){
 
             selectPhotoUri = data.data
             val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectPhotoUri)
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            select_photo_btm.setBackgroundDrawable(bitmapDrawable)
+
+            selectphoto_Image_btm.setImageBitmap(bitmap)
+            select_photo_btm.alpha = 0f
+            /*val bitmapDrawable = BitmapDrawable(bitmap)
+            select_photo_btm.setBackgroundDrawable(bitmapDrawable)*/
         }
     }
 
@@ -107,6 +110,9 @@ class CreateAccountActivity: AppCompatActivity(){
                     saveUserToDatabase(it.toString())
                 }
             }
+            .addOnFailureListener{
+
+            }
     }
 
     private fun saveUserToDatabase(profileImageUrl: String){
@@ -123,6 +129,7 @@ class CreateAccountActivity: AppCompatActivity(){
     companion object {
         private const val MESSAGE = "CreateAccountActivity"
     }
+
 
 }
 

@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import kotlinx.android.synthetic.main.activity_forgot_password.*
 import kotlinx.android.synthetic.main.activity_login_screen.*
 
 
@@ -23,6 +22,11 @@ class LogInActivity: AppCompatActivity() {
 
         log_in_btm.setOnClickListener {
             parseLogInActivity()
+        }
+
+        forgot_password_textView.setOnClickListener{
+            forgotPassword()
+
         }
 
     }
@@ -57,6 +61,12 @@ class LogInActivity: AppCompatActivity() {
                     callback.invoke(null)
                 }
             }
+    }
+
+    private fun forgotPassword() {
+        Log.d(MESSAGE, "show reset password screen")
+        val intent = Intent(this, ResetPasswordActivity::class.java)
+        startActivity(intent)
     }
     companion object {
         private const val MESSAGE = "LogInActivity"

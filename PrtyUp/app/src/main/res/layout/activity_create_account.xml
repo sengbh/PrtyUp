@@ -59,4 +59,14 @@
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.5"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.099"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            app:civ_border_width="4dp"
+            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:id="@+id/selectphoto_Image_btm"
+            app:layout_constraintBottom_toBottomOf="@+id/select_photo_btm"
+            app:layout_constraintEnd_toEndOf="@+id/select_photo_btm"
+            app:layout_constraintTop_toTopOf="@+id/select_photo_btm"
+            app:layout_constraintStart_toStartOf="@+id/select_photo_btm"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
